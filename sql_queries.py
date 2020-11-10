@@ -17,7 +17,7 @@ user_table_create = ("""
 """)
 
 song_table_create = ("""
-    CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY, title varchar, artist_id varchar, year int);
+    CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY, title varchar, artist_id varchar, year int, duration numeric);
 """)
 
 artist_table_create = ("""
