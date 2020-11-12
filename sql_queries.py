@@ -1,3 +1,5 @@
+# This file houses all SQL queries that are made in the project. They are centralized here for purposes of modularity and ease of maintenance.
+
 # DROP TABLES
 
 songplay_table_drop = "DROP TABLE IF EXISTS songplays"
