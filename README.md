@@ -40,13 +40,13 @@ Before executing the ETL, the `create_tables.py` script must be run. This script
 ## Sample SQL Commands
 
 Drop Table:
-    DROP TABLE IF EXISTS songplays
+        DROP TABLE IF EXISTS songplays
     
 Create Table:
-    CREATE TABLE IF NOT EXISTS songplays (songplay_id serial PRIMARY KEY, start_time timestamp, user_id varchar, level varchar, song_id varchar, artist_id varchar, session_id int, location varchar, user_agent varchar);
+        CREATE TABLE IF NOT EXISTS songplays (songplay_id serial PRIMARY KEY, start_time timestamp, user_id varchar, level varchar, song_id varchar, artist_id varchar, session_id int, location varchar, user_agent varchar);
     
 Insert Record into Table:
-    INSERT INTO users (user_id, first_name, last_name, gender, level) VALUES (%s, %s, %s, %s, %s) ON CONFLICT (user_id) DO NOTHING;
+        INSERT INTO users (user_id, first_name, last_name, gender, level) VALUES (%s, %s, %s, %s, %s) ON CONFLICT (user_id) DO NOTHING;
     
 Find song ID and artist ID with join:
-    SELECT song_id, artists.artist_id FROM songs JOIN artists on songs.artist_id = artists.artist_id WHERE title = %s AND name = %s AND duration = %s;
+        SELECT song_id, artists.artist_id FROM songs JOIN artists on songs.artist_id = artists.artist_id WHERE title = %s AND name = %s AND duration = %s;
