@@ -54,3 +54,15 @@ Insert Record into Table:
 Find song ID and artist ID with join:
         
     SELECT song_id, artists.artist_id FROM songs JOIN artists on songs.artist_id = artists.artist_id WHERE title = %s AND name = %s AND duration = %s;
+    
+## Datasets
+
+## Screenshots of Tables with Sample Data
+
+`songs` Table:
+
+![songs table](/images/songs_table.png "songs table")
+
+`time` Table:
+
+![time table](/images/time_table.png "time table")
