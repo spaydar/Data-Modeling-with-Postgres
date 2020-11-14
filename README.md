@@ -41,15 +41,15 @@ Before executing the ETL, the `create_tables.py` script must be run (use the `py
 
 Drop Table:
 
-    DROP TABLE IF EXISTS songplays
+    DROP TABLE IF EXISTS songplays;
     
 Create Table:
 
-    CREATE TABLE IF NOT EXISTS songplays (songplay_id serial PRIMARY KEY, start_time timestamp, user_id varchar, level varchar, song_id varchar, artist_id varchar, session_id int, location varchar, user_agent varchar);
+    CREATE TABLE IF NOT EXISTS songplays (songplay_id serial PRIMARY KEY, start_time timestamp NOT NULL, user_id varchar NOT NULL, level varchar, song_id varchar, artist_id varchar, session_id int, location varchar, user_agent varchar);
     
 Insert Record into Table:
 
-    INSERT INTO users (user_id, first_name, last_name, gender, level) VALUES (%s, %s, %s, %s, %s) ON CONFLICT (user_id) DO NOTHING;
+    INSERT INTO users (user_id, first_name, last_name, gender, level) VALUES (%s, %s, %s, %s, %s) ON CONFLICT (user_id) DO UPDATE SET level=EXCLUDED.level;
     
 Find song ID and artist ID with join:
         
